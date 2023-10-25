@@ -8,8 +8,8 @@ interface ProductItemProps{
 }
 
 const ProductItem = ({product}: ProductItemProps) => {
-    return <div className="flex max-w-[156px] flex-col gap-4">
-        <div className=" relative bg-accent rounded-lg h-[170px] w-[156px] flex items-center justify-center ">
+    return <div className="flex max-w-[170px] flex-col gap-4">
+        <div className=" relative bg-accent rounded-lg h-[170px] w-[170px] flex items-center justify-center ">
             <Image
                 src={product.imageUrls[0]}
                 height={0}
@@ -32,16 +32,16 @@ const ProductItem = ({product}: ProductItemProps) => {
         
 
         <div className="flex flex-col gap-1"> 
-            <p className="w-full overflow-hidden text-sm text-ellipsis whitespace-nowrap">
+            <p className="overflow-hidden text-ellipsis whitespace-nowrap text-sm">
                 {product.name}
             </p>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
                 {product.discountPercentage > 0 ?(
                     <>
-                        <p className="font-semibold">R$ {product.totalPrice.toFixed(2)}</p>
+                        <p className="font-semibold overflow-hidden text-ellipsis whitespace-nowrap">R$ {product.totalPrice.toFixed(2)}</p>
 
-                        <p className="opacity-75 line-through text-xs">
+                        <p className="opacity-75 line-through text-xs overflow-hidden text-ellipsis whitespace-nowrap">
                             R$ {Number(product.basePrice).toFixed(2)}</p>
                     </>
                 ) : (
